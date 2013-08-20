@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="CodeGEN.UI.UserControls.SQLTableSelection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:uc="clr-namespace:CodeGEN.UI.UserControls"
+             d:DesignHeight="300" d:DesignWidth="300" Loaded="UserControl_Loaded_1">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="#FF217DE8" BorderThickness="0,0,0,1">
+            <Label Foreground="#FF217DE8" FontStyle="Normal" FontSize="16" FontWeight="Medium">Table Selection</Label>
+        </Border>
+
+        
+      
+            <Grid Grid.Row="1" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <uc:SQLAuthentication Grid.Row="0" DataContext="{Binding SqlAuthentication}">
+
+                </uc:SQLAuthentication>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0">Table:</TextBlock>
+                    <ComboBox  Grid.Column="1" ItemsSource="{Binding TableCollection}" SelectedItem="{Binding SelectedTable}">
+
+                    </ComboBox>
+
+                </Grid>
+
+            </Grid>
+       
+    </Grid>
+</UserControl>

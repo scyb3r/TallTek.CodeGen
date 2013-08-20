@@ -1,0 +1,22 @@
+﻿<Window x:Class="CodeGEN.UI.Windows.TextViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ae="http://icsharpcode.net/sharpdevelop/avalonedit"
+        Title="TextViewer" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ae:TextEditor Grid.Row="0" Name="txtEditor" ShowLineNumbers="true"  ></ae:TextEditor>
+
+        <Button Grid.Row="1" Name="btnCopy"  Margin="5"   Height="30" Click="btnCopy_Click">
+            <StackPanel Orientation="Horizontal">
+
+                <TextBlock VerticalAlignment="Center">Copy Contents</TextBlock>
+            </StackPanel>
+        </Button>
+
+    </Grid>
+</Window>

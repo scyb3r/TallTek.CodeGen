@@ -1,0 +1,9 @@
+﻿<Window x:Class="CodeGEN.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="clr-namespace:CodeGEN.UI"
+        Title="MainWindow" Height="350" Width="750" MinHeight="350" MinWidth="750" >
+    <Grid>
+        <ui:GenerationForm></ui:GenerationForm>
+    </Grid>
+</Window>

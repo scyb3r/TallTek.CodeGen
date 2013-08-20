@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="CodeGEN.UI.UserControls.TemplateSelectionList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             Loaded="UserControl_Loaded"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="#FF217DE8" BorderThickness="0,0,0,1">
+            <Label Foreground="#FF217DE8" FontStyle="Normal" FontSize="16" FontWeight="Medium">Template Selection</Label>
+        </Border>
+
+
+        <!--<ListBox Grid.Row="1"
+            ItemsSource="{Binding AvailableTemplates}">
+
+        </ListBox>-->
+        <Grid  Grid.Row="1" Margin="5">
+            <DataGrid 
+                                        Name="dgrdTemplates"
+                                        ItemsSource="{Binding AvailableTemplates}"
+                                        AutoGenerateColumns="False"
+                                       
+                                        CanUserAddRows="False"
+                                        CanUserDeleteRows="False"
+                                        CanUserReorderColumns="False"
+                                        IsTextSearchEnabled="True"
+                                        SelectionMode="Single"
+                                        AlternatingRowBackground="WhiteSmoke"
+                              VerticalScrollBarVisibility="Hidden"
+                                        
+                                    >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Select" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <CheckBox HorizontalAlignment="Center"
+                                                            IsChecked="{Binding IsSelected,UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn 
+                                                Header="Template Name"
+                                                IsReadOnly="True"
+                                                Binding="{Binding SelectedObject.TemplateName}" Width="Auto" />
+                <!--
+                <DataGridTextColumn 
+                                                Header="Template Name"
+                                                IsReadOnly="True"
+                                                Binding="{Binding FileNameOnly}" Width="Auto" />
+
+                <DataGridTextColumn 
+                                                Header="Output Name"
+                                                IsReadOnly="False"
+                                                Binding="{Binding OutputNameFormat}" Width="*" />-->
+
+            </DataGrid.Columns>
+        </DataGrid>
+        </Grid>
+        
+    </Grid>
+</UserControl>
